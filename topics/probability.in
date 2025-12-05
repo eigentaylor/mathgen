@@ -1,0 +1,93 @@
+# Probability topic overlay for Mathgen
+# This file adds weighted rules to bias content toward probability theory
+# Use +N suffix to make terms N times more likely
+
+# Area nouns - heavily weight probability-related areas
+AREANOUN+20 probability
+AREANOUN+15 stochastic analysis
+AREANOUN+10 stochastic calculus
+AREANOUN+10 measure theory
+AREANOUN+8 ergodic theory
+AREANOUN+8 random matrix theory
+AREANOUN+6 martingale theory
+AREANOUN+6 Markov chain theory
+AREANOUN+5 information theory
+AREANOUN+4 percolation theory
+AREANOUN+4 queueing theory
+
+# Area adjectives - weight probabilistic modifiers
+AREAADJ+15 stochastic
+AREAADJ+12 probabilistic
+AREAADJ+10 random
+AREAADJ+8 ergodic
+AREAADJ+6 Markov
+AREAADJ+5 stationary
+
+# Mathematical objects - probability-specific nouns
+NOUN+15 random variable
+NOUNS+15 random variables
+NOUN+12 probability measure
+NOUNS+12 probability measures
+NOUN+12 martingale
+NOUNS+12 martingales
+NOUN+10 Brownian motion
+NOUNS+10 Brownian motions
+NOUN+10 process
+NOUNS+10 processes
+NOUN+8 expectation
+NOUNS+8 expectations
+NOUN+8 distribution
+NOUNS+8 distributions
+NOUN+6 Markov chain
+NOUNS+6 Markov chains
+NOUN+6 stopping time
+NOUNS+6 stopping times
+NOUN+6 filtration
+NOUNS+6 filtrations
+NOUN+5 variance
+NOUNS+5 variances
+NOUN+5 covariance
+NOUNS+5 covariances
+NOUN+5 sample path
+NOUNS+5 sample paths
+NOUN+4 hitting time
+NOUNS+4 hitting times
+NOUN+4 transition kernel
+NOUNS+4 transition kernels
+NOUN+3 L\'evy process
+NOUNS+3 L\'evy processes
+NOUN+3 Poisson process
+NOUNS+3 Poisson processes
+
+# Properties and adjectives - probabilistic properties
+ADJECTIVE+15 random
+ADJECTIVE+15 stochastic
+ADJECTIVE+12 independent
+ADJECTIVE+10 identically distributed
+ADJECTIVE+10 measurable
+ADJECTIVE+8 integrable
+ADJECTIVE+8 almost surely
+ADJECTIVE+6 ergodic
+ADJECTIVE+6 stationary
+ADJECTIVE+6 Markov
+ADJECTIVE+5 reversible
+ADJECTIVE+5 recurrent
+ADJECTIVE+5 transient
+ADJECTIVE+4 uniformly integrable
+ADJECTIVE+4 exchangeable
+ADJECTIVE+4 adapted
+ADJECTIVE+3 predictable
+ADJECTIVE+3 optional
+ADJECTIVE+3 progressive
+
+# Famous probabilists
+FAMOUS+5 Kolmogorov
+FAMOUS+4 It\^o
+FAMOUS+4 Wiener
+FAMOUS+4 Markov
+FAMOUS+3 L\'evy
+FAMOUS+3 Doob
+FAMOUS+3 Feller
+FAMOUS+2 Donsker
+FAMOUS+2 Varadhan
+FAMOUS+2 Dynkin

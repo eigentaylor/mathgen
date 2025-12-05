@@ -1,0 +1,95 @@
+# Algebra topic overlay for Mathgen
+# This file adds weighted rules to bias content toward algebra
+# Use +N suffix to make terms N times more likely
+
+# Area nouns - heavily weight algebra-related areas
+AREANOUN+20 algebra
+AREANOUN+15 group theory
+AREANOUN+12 ring theory
+AREANOUN+10 field theory
+AREANOUN+10 Galois theory
+AREANOUN+8 representation theory
+AREANOUN+8 linear algebra
+AREANOUN+6 commutative algebra
+AREANOUN+6 homological algebra
+AREANOUN+5 module theory
+AREANOUN+5 Lie theory
+AREANOUN+4 category theory
+
+# Area adjectives - weight algebraic modifiers
+AREAADJ+15 algebraic
+AREAADJ+10 Galois
+AREAADJ+8 commutative
+AREAADJ+6 non-commutative
+AREAADJ+6 linear
+AREAADJ+5 homological
+
+# Mathematical objects - algebra-specific nouns
+NOUN+15 group
+NOUNS+15 groups
+NOUN+12 ring
+NOUNS+12 rings
+NOUN+12 field
+NOUNS+12 fields
+NOUN+10 module
+NOUNS+10 modules
+NOUN+10 homomorphism
+NOUNS+10 homomorphisms
+NOUN+8 ideal
+NOUNS+8 ideals
+NOUN+8 subgroup
+NOUNS+8 subgroups
+NOUN+6 automorphism
+NOUNS+6 automorphisms
+NOUN+6 isomorphism
+NOUNS+6 isomorphisms
+NOUN+5 kernel
+NOUNS+5 kernels
+NOUN+5 quotient
+NOUNS+5 quotients
+NOUN+5 extension
+NOUNS+5 extensions
+NOUN+4 coset
+NOUNS+4 cosets
+NOUN+4 normal subgroup
+NOUNS+4 normal subgroups
+NOUN+4 center
+NOUNS+4 centers
+NOUN+3 conjugacy class
+NOUNS+3 conjugacy classes
+NOUN+3 Sylow subgroup
+NOUNS+3 Sylow subgroups
+NOUN+3 representation
+NOUNS+3 representations
+
+# Properties and adjectives - algebraic properties
+ADJECTIVE+15 abelian
+ADJECTIVE+12 commutative
+ADJECTIVE+10 cyclic
+ADJECTIVE+10 finite
+ADJECTIVE+8 simple
+ADJECTIVE+8 Noetherian
+ADJECTIVE+6 Artinian
+ADJECTIVE+6 nilpotent
+ADJECTIVE+6 solvable
+ADJECTIVE+5 normal
+ADJECTIVE+5 prime
+ADJECTIVE+5 maximal
+ADJECTIVE+4 principal
+ADJECTIVE+4 free
+ADJECTIVE+4 finitely generated
+ADJECTIVE+3 torsion-free
+ADJECTIVE+3 projective
+ADJECTIVE+3 injective
+
+# Famous algebraists
+FAMOUS+5 Galois
+FAMOUS+4 Noether
+FAMOUS+4 Artin
+FAMOUS+3 Sylow
+FAMOUS+3 Dedekind
+FAMOUS+3 Hilbert
+FAMOUS+3 Kronecker
+FAMOUS+2 Abel
+FAMOUS+2 Jordan
+FAMOUS+2 Wedderburn

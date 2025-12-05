@@ -31,6 +31,8 @@ You will need the following LaTeX packages:
 - natbib
 - truncate
 
+tlmgr install amscls amsmath amsfonts fullpage mathrsfs natbib truncate preprint jknapltx rsfs
+
 If you want to produce books (--product=book), you will need the
 following additional LaTeX packages:
 
@@ -43,6 +45,8 @@ following additional LaTeX packages:
 - makeidx
 - url
 - tocbibind
+
+tlmgr install geometry txfonts hyphenat textcase hyperref titlesec makeidx url tocbibind
 
 You will also need the `makeindex' program.
 
@@ -91,6 +95,56 @@ $ ./mathgen.pl --product=book --mode=pdf --output=mybook.pdf --author="J. Doe"
 Note that this may take a couple of minutes to generate and compile.
 
 
+Topic-Focused Papers
+====================
+
+You can bias the generated content toward specific mathematical topics
+using the --topic option.  This gives your paper a thematic focus while
+remaining proper nonsense.
+
+Available topics:
+- topology: manifolds, compactness, homotopy, etc.
+- algebra: groups, rings, fields, homomorphisms, etc.
+- analysis: functions, operators, measures, convergence, etc.
+- probability: random variables, martingales, Brownian motion, etc.
+- number_theory: primes, fields, L-functions, etc.
+- social_choice: voting theory, preferences, mechanism design, etc.
+- approval_voting: approval ballots, game theory, Nash equilibria, etc.
+
+You can combine multiple topics:
+
+$ ./mathgen.pl --topic=topology --topic=algebra --author="J. Doe" --mode=pdf --output=paper.pdf
+
+Example with approval voting focus:
+
+$ ./mathgen.pl --topic=approval_voting --author="S. Brams" --mode=pdf --output=approval.pdf
+
+
+Runner Script
+=============
+
+For a more user-friendly experience, use the mathgen-runner.pl wrapper
+script.  It supports configuration files and interactive prompts.
+
+Interactive mode (guided setup):
+
+$ ./mathgen-runner.pl --interactive
+
+Using a configuration file:
+
+$ ./mathgen-runner.pl --config=mathgen.conf
+
+See mathgen.conf.example for the configuration file format.
+
+Mix config file with command-line overrides:
+
+$ ./mathgen-runner.pl --config=myconfig.json --topic=algebra --output=new.pdf
+
+Direct options (same as mathgen.pl):
+
+$ ./mathgen-runner.pl --author="J. Doe" --topic=topology --output=paper.pdf
+
+
 Merchandising
 =============
 
@@ -128,6 +182,9 @@ A quick road map to the files in the source distribution:
 - mathgen.pl: Main driver file, processes options and disposes of
   output.
 
+- mathgen-runner.pl: User-friendly wrapper script with interactive
+  mode and config file support.
+
 - scigen.pm: The SCIgen grammar engine.  Reads the rules files and
   generates the output.
 
@@ -136,6 +193,14 @@ A quick road map to the files in the source distribution:
 
 - sci{article,book,blurb}.in: Grammar rules specific for the
   corresponding products.
+
+- topics/: Directory containing topic overlay files that bias
+  content toward specific mathematical areas (topology.in,
+  algebra.in, analysis.in, probability.in, number_theory.in,
+  social_choice.in).
+
+- mathgen.conf.example: Example configuration file for the runner
+  script.
 
 
 Credits

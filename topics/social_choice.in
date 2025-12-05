@@ -1,0 +1,120 @@
+# Social Choice Theory topic overlay for Mathgen
+# This file adds weighted rules to bias content toward social choice theory,
+# voting theory, and mechanism design
+# Use +N suffix to make terms N times more likely
+
+# Area nouns - heavily weight social choice-related areas
+AREANOUN+20 social choice theory
+AREANOUN+15 voting theory
+AREANOUN+12 mechanism design
+AREANOUN+10 game theory
+AREANOUN+10 welfare economics
+AREANOUN+8 decision theory
+AREANOUN+8 auction theory
+AREANOUN+6 cooperative game theory
+AREANOUN+6 bargaining theory
+AREANOUN+5 judgment aggregation
+AREANOUN+5 matching theory
+AREANOUN+4 fair division
+
+# Area adjectives - weight social choice modifiers
+AREAADJ+15 strategic
+AREAADJ+12 electoral
+AREAADJ+10 axiomatic
+AREAADJ+10 cooperative
+AREAADJ+8 non-cooperative
+AREAADJ+6 computational
+AREAADJ+5 normative
+
+# Mathematical objects - social choice-specific nouns
+NOUN+15 preference
+NOUNS+15 preferences
+NOUN+15 voter
+NOUNS+15 voters
+NOUN+12 ballot
+NOUNS+12 ballots
+NOUN+12 coalition
+NOUNS+12 coalitions
+NOUN+10 candidate
+NOUNS+10 candidates
+NOUN+10 election
+NOUNS+10 elections
+NOUN+10 outcome
+NOUNS+10 outcomes
+NOUN+8 ranking
+NOUNS+8 rankings
+NOUN+8 voting rule
+NOUNS+8 voting rules
+NOUN+8 social welfare function
+NOUNS+8 social welfare functions
+NOUN+6 profile
+NOUNS+6 profiles
+NOUN+6 strategy
+NOUNS+6 strategies
+NOUN+6 equilibrium
+NOUNS+6 equilibria
+NOUN+5 mechanism
+NOUNS+5 mechanisms
+NOUN+5 allocation
+NOUNS+5 allocations
+NOUN+5 utility function
+NOUNS+5 utility functions
+NOUN+4 payoff
+NOUNS+4 payoffs
+NOUN+4 manipulation
+NOUNS+4 manipulations
+NOUN+4 agenda
+NOUNS+4 agendas
+NOUN+3 pivot
+NOUNS+3 pivots
+NOUN+3 tie-breaker
+NOUNS+3 tie-breakers
+NOUN+3 quota
+NOUNS+3 quotas
+
+# Voting methods as nouns
+NOUN+8 approval voting
+NOUN+6 plurality voting
+NOUN+6 Borda count
+NOUN+5 instant-runoff voting
+NOUN+5 ranked-choice voting
+NOUN+4 Condorcet method
+NOUN+4 score voting
+NOUN+3 proportional representation
+NOUN+3 single transferable vote
+
+# Properties and adjectives - social choice properties
+ADJECTIVE+15 strategic
+ADJECTIVE+15 Pareto-optimal
+ADJECTIVE+12 monotonic
+ADJECTIVE+12 anonymous
+ADJECTIVE+10 neutral
+ADJECTIVE+10 decisive
+ADJECTIVE+8 dictatorial
+ADJECTIVE+8 non-dictatorial
+ADJECTIVE+8 manipulable
+ADJECTIVE+6 strategy-proof
+ADJECTIVE+6 incentive-compatible
+ADJECTIVE+6 Condorcet
+ADJECTIVE+5 majoritarian
+ADJECTIVE+5 proportional
+ADJECTIVE+5 sincere
+ADJECTIVE+4 transitive
+ADJECTIVE+4 complete
+ADJECTIVE+4 rational
+ADJECTIVE+3 resolute
+ADJECTIVE+3 independent
+ADJECTIVE+3 fair
+
+# Famous social choice theorists
+FAMOUS+5 Arrow
+FAMOUS+5 Gibbard
+FAMOUS+4 Satterthwaite
+FAMOUS+4 Sen
+FAMOUS+4 Condorcet
+FAMOUS+3 Borda
+FAMOUS+3 Nash
+FAMOUS+3 Shapley
+FAMOUS+2 Black
+FAMOUS+2 Moulin
+FAMOUS+2 Myerson

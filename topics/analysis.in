@@ -1,0 +1,95 @@
+# Analysis topic overlay for Mathgen
+# This file adds weighted rules to bias content toward analysis
+# Use +N suffix to make terms N times more likely
+
+# Area nouns - heavily weight analysis-related areas
+AREANOUN+20 analysis
+AREANOUN+12 functional analysis
+AREANOUN+10 real analysis
+AREANOUN+10 complex analysis
+AREANOUN+8 harmonic analysis
+AREANOUN+8 measure theory
+AREANOUN+6 operator theory
+AREANOUN+6 spectral theory
+AREANOUN+5 {PDE}
+AREANOUN+5 calculus
+AREANOUN+4 potential theory
+
+# Area adjectives - weight analytic modifiers
+AREAADJ+15 analytic
+AREAADJ+10 harmonic
+AREAADJ+8 spectral
+AREAADJ+6 measurable
+AREAADJ+5 complex
+AREAADJ+5 real
+
+# Mathematical objects - analysis-specific nouns
+NOUN+15 function
+NOUNS+15 functions
+NOUN+12 operator
+NOUNS+12 operators
+NOUN+12 measure
+NOUNS+12 measures
+NOUN+10 sequence
+NOUNS+10 sequences
+NOUN+10 series
+NOUNS+10 series
+NOUN+8 integral
+NOUNS+8 integrals
+NOUN+8 limit
+NOUNS+8 limits
+NOUN+6 derivative
+NOUNS+6 derivatives
+NOUN+6 Banach space
+NOUNS+6 Banach spaces
+NOUN+6 Hilbert space
+NOUNS+6 Hilbert spaces
+NOUN+5 norm
+NOUNS+5 norms
+NOUN+5 spectrum
+NOUNS+5 spectra
+NOUN+5 eigenvalue
+NOUNS+5 eigenvalues
+NOUN+4 eigenvector
+NOUNS+4 eigenvectors
+NOUN+4 distribution
+NOUNS+4 distributions
+NOUN+4 Fourier transform
+NOUNS+4 Fourier transforms
+NOUN+3 kernel
+NOUNS+3 kernels
+NOUN+3 Lebesgue integral
+NOUNS+3 Lebesgue integrals
+
+# Properties and adjectives - analytic properties
+ADJECTIVE+15 continuous
+ADJECTIVE+15 bounded
+ADJECTIVE+12 integrable
+ADJECTIVE+10 differentiable
+ADJECTIVE+10 measurable
+ADJECTIVE+8 convergent
+ADJECTIVE+8 uniformly continuous
+ADJECTIVE+6 holomorphic
+ADJECTIVE+6 analytic
+ADJECTIVE+6 complete
+ADJECTIVE+5 separable
+ADJECTIVE+5 absolutely continuous
+ADJECTIVE+5 Lipschitz
+ADJECTIVE+4 square-integrable
+ADJECTIVE+4 self-adjoint
+ADJECTIVE+4 compact
+ADJECTIVE+3 dense
+ADJECTIVE+3 normal
+ADJECTIVE+3 unitary
+
+# Famous analysts
+FAMOUS+5 Lebesgue
+FAMOUS+4 Banach
+FAMOUS+4 Hilbert
+FAMOUS+4 Fourier
+FAMOUS+3 Cauchy
+FAMOUS+3 Weierstrass
+FAMOUS+3 Riemann
+FAMOUS+2 Schwartz
+FAMOUS+2 von Neumann
+FAMOUS+2 Riesz

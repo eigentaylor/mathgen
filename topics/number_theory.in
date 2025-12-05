@@ -1,0 +1,94 @@
+# Number Theory topic overlay for Mathgen
+# This file adds weighted rules to bias content toward number theory
+# Use +N suffix to make terms N times more likely
+
+# Area nouns - heavily weight number theory-related areas
+AREANOUN+20 number theory
+AREANOUN+15 analytic number theory
+AREANOUN+12 algebraic number theory
+AREANOUN+10 arithmetic
+AREANOUN+8 arithmetic geometry
+AREANOUN+6 Galois theory
+AREANOUN+6 class field theory
+AREANOUN+5 modular forms
+AREANOUN+5 elliptic curves
+AREANOUN+4 Diophantine geometry
+AREANOUN+4 sieve theory
+
+# Area adjectives - weight number-theoretic modifiers
+AREAADJ+15 arithmetic
+AREAADJ+12 $p$-adic
+AREAADJ+10 Diophantine
+AREAADJ+8 analytic
+AREAADJ+6 algebraic
+AREAADJ+5 modular
+
+# Mathematical objects - number theory-specific nouns
+NOUN+15 prime
+NOUNS+15 primes
+NOUN+12 integer
+NOUNS+12 integers
+NOUN+12 field
+NOUNS+12 fields
+NOUN+10 number field
+NOUNS+10 number fields
+NOUN+10 ideal
+NOUNS+10 ideals
+NOUN+8 L-function
+NOUNS+8 L-functions
+NOUN+8 zeta function
+NOUNS+8 zeta functions
+NOUN+6 modular form
+NOUNS+6 modular forms
+NOUN+6 elliptic curve
+NOUNS+6 elliptic curves
+NOUN+6 Galois group
+NOUNS+6 Galois groups
+NOUN+5 class group
+NOUNS+5 class groups
+NOUN+5 residue
+NOUNS+5 residues
+NOUN+5 character
+NOUNS+5 characters
+NOUN+4 Dirichlet series
+NOUNS+4 Dirichlet series
+NOUN+4 quadratic form
+NOUNS+4 quadratic forms
+NOUN+3 lattice
+NOUNS+3 lattices
+NOUN+3 congruence
+NOUNS+3 congruences
+
+# Properties and adjectives - number-theoretic properties
+ADJECTIVE+15 prime
+ADJECTIVE+12 Diophantine
+ADJECTIVE+12 arithmetic
+ADJECTIVE+10 quadratic
+ADJECTIVE+10 algebraic
+ADJECTIVE+8 rational
+ADJECTIVE+8 integral
+ADJECTIVE+6 modular
+ADJECTIVE+6 Galois
+ADJECTIVE+6 transcendental
+ADJECTIVE+5 irreducible
+ADJECTIVE+5 primitive
+ADJECTIVE+5 cyclic
+ADJECTIVE+4 totally real
+ADJECTIVE+4 ramified
+ADJECTIVE+4 unramified
+ADJECTIVE+3 split
+ADJECTIVE+3 inert
+ADJECTIVE+3 coprime
+
+# Famous number theorists
+FAMOUS+5 Gauss
+FAMOUS+5 Riemann
+FAMOUS+4 Euler
+FAMOUS+4 Fermat
+FAMOUS+4 Dirichlet
+FAMOUS+3 Dedekind
+FAMOUS+3 Ramanujan
+FAMOUS+3 Wiles
+FAMOUS+2 Hardy
+FAMOUS+2 Erd\H{o}s
+FAMOUS+2 Selberg

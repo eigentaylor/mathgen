@@ -1,0 +1,255 @@
+# Approval Voting topic overlay for Mathgen
+# This file biases content toward approval voting, game theory,
+# social choice, and adjacent computational and statistical topics.
+# Use +N suffix to make terms N times more likely.
+
+# Area nouns - heavily weight approval voting and related areas
+AREANOUN+30 approval voting theory
+AREANOUN+25 game theory
+AREANOUN+20 voting theory
+AREANOUN+18 social choice theory
+AREANOUN+16 mechanism design
+AREANOUN+14 computational social choice
+AREANOUN+12 collective decision-making
+AREANOUN+10 decision theory
+AREANOUN+10 strategic voting theory
+AREANOUN+8 welfare economics
+AREANOUN+8 behavioral economics
+AREANOUN+7 cooperative game theory
+AREANOUN+6 auction theory
+AREANOUN+6 political science
+AREANOUN+5 judgment aggregation
+
+# Area adjectives - weight relevant modifiers and research perspectives
+AREAADJ+25 strategic
+AREAADJ+20 axiomatic
+AREAADJ+18 game-theoretic
+AREAADJ+16 computational
+AREAADJ+15 empirical
+AREAADJ+14 algorithmic
+AREAADJ+12 normative
+AREAADJ+10 experimental
+AREAADJ+9 Bayesian
+AREAADJ+8 cooperative
+AREAADJ+7 non-cooperative
+
+# Mathematical objects and core nouns - approval voting and game theory
+NOUN+30 approval ballot
+NOUNS+30 approval ballots
+NOUN+28 approval score
+NOUNS+28 approval scores
+NOUN+22 voter
+NOUNS+22 voters
+NOUN+22 candidate
+NOUNS+22 candidates
+NOUN+20 approval set
+NOUNS+20 approval sets
+NOUN+18 strategy
+NOUNS+18 strategies
+NOUN+18 equilibrium
+NOUNS+18 equilibria
+NOUN+16 Nash equilibrium
+NOUNS+16 Nash equilibria
+NOUN+16 preference
+NOUNS+16 preferences
+NOUN+16 utility function
+NOUNS+16 utility functions
+NOUN+14 coalition
+NOUNS+14 coalitions
+NOUN+14 outcome
+NOUNS+14 outcomes
+NOUN+14 winner
+NOUNS+14 winners
+NOUN+12 threshold
+NOUNS+12 thresholds
+NOUN+12 payoff
+NOUNS+12 payoffs
+NOUN+12 sincere ballot
+NOUNS+12 sincere ballots
+NOUN+12 strategic ballot
+NOUNS+12 strategic ballots
+NOUN+12 approval cutoff
+NOUNS+12 approval cutoffs
+NOUN+10 dominant strategy
+NOUNS+10 dominant strategies
+NOUN+10 best response
+NOUNS+10 best responses
+NOUN+10 tie-breaking rule
+NOUNS+10 tie-breaking rules
+NOUN+8 Condorcet winner
+NOUNS+8 Condorcet winners
+NOUN+8 Pareto optimum
+NOUNS+8 Pareto optima
+NOUN+8 social welfare
+NOUNS+8 social welfare functions
+NOUN+6 manipulation
+NOUNS+6 manipulations
+NOUN+6 dictatorship
+NOUNS+6 dictatorships
+
+# Voting rules, multiwinner methods, and related concepts
+NOUN+22 approval voting
+NOUN+18 score voting
+NOUN+16 range voting
+NOUN+14 plurality voting
+NOUN+14 proportional approval voting
+NOUN+14 sequential PAV
+NOUN+13 PAV
+NOUN+12 Chamberlin--Courant
+NOUN+12 Monroe
+NOUN+12 Single Transferable Vote
+NOUN+10 Sainte-Laguë
+NOUN+10 D'Hondt
+NOUN+10 Borda count
+NOUN+9 Condorcet method
+NOUN+8 majority judgment
+NOUN+8 Approval-based Committee Selection
+NOUN+8 Satisfaction Approval Voting
+
+# Properties and adjectives - approval voting and social choice properties
+ADJECTIVE+28 approval-based
+ADJECTIVE+22 strategic
+ADJECTIVE+20 sincere
+ADJECTIVE+20 Pareto-optimal
+ADJECTIVE+18 incentive-compatible
+ADJECTIVE+18 strategy-proof
+ADJECTIVE+16 monotonic
+ADJECTIVE+16 anonymous
+ADJECTIVE+16 neutral
+ADJECTIVE+14 non-manipulable
+ADJECTIVE+14 decisive
+ADJECTIVE+14 resolute
+ADJECTIVE+12 Condorcet-consistent
+ADJECTIVE+12 clone-independent
+ADJECTIVE+12 majoritarian
+ADJECTIVE+12 consistent
+ADJECTIVE+10 proportional
+ADJECTIVE+10 utilitarian
+ADJECTIVE+10 egalitarian
+ADJECTIVE+10 participatory
+ADJECTIVE+8 stable
+ADJECTIVE+8 efficient
+ADJECTIVE+8 fair
+ADJECTIVE+6 non-dictatorial
+ADJECTIVE+6 transitive
+ADJECTIVE+6 complete
+
+# Axioms, criteria, and evaluation metrics
+NOUN+18 participation criterion
+NOUN+16 monotonicity criterion
+NOUN+16 reinforcement
+NOUN+16 consistency criterion
+NOUN+14 committee monotonicity
+NOUN+14 clone independence
+NOUN+14 proportionality guarantee
+NOUN+14 representativeness
+NOUN+12 distortion
+NOUN+12 regret
+NOUN+12 social choice metric
+NOUN+10 sample complexity
+NOUN+10 robustness
+
+# Computational and statistical concepts
+NOUN+16 NP-hardness
+NOUN+14 approximation algorithm
+NOUN+14 heuristic
+NOUN+12 polynomial-time
+NOUN+12 computational complexity
+NOUN+12 parameterized complexity
+NOUN+12 fixed-parameter tractable
+NOUN+12 Bayesian model
+NOUN+10 maximum-likelihood estimator
+NOUN+10 impartial culture
+NOUN+10 Mallows model
+NOUN+10 empirical distribution
+
+# Strategic behavior, manipulations and equilibrium concepts
+NOUN+18 strategic nomination
+NOUN+16 ballot truncation
+NOUN+16 approval inflation
+NOUN+16 bullet voting
+NOUN+14 manipulation margin
+NOUN+14 equilibrium selection
+NOUN+12 dominated strategy
+NOUN+12 iterative elimination
+NOUN+12 trembling-hand
+
+# Methods and tools used in research
+NOUN+14 simulation
+NOUN+14 Monte Carlo
+NOUN+12 experimental design
+NOUN+12 field experiment
+NOUN+12 lab experiment
+NOUN+10 regression analysis
+NOUN+10 causal inference
+NOUN+10 synthetic data
+
+# Common verbs/noun-verb pairs used in paper text
+NOUN+10 analyze
+NOUN+10 characterize
+NOUN+10 approximate
+NOUN+10 simulate
+NOUN+10 prove
+NOUN+10 derive
+NOUN+10 evaluate
+NOUN+10 compare
+
+# Common phrases (weighted to encourage scholarly phrasing)
+NOUN+12 "welfare-maximizing"
+NOUN+12 "computationally tractable"
+NOUN+12 "axiomatic characterization"
+NOUN+12 "incentive compatibility"
+NOUN+12 "strategic behavior"
+NOUN+12 "empirical evaluation"
+NOUN+10 "approximation guarantee"
+
+# Famous game theorists and social choice theorists (expanded)
+FAMOUS+10 Nash
+FAMOUS+9 Arrow
+FAMOUS+9 Gibbard
+FAMOUS+8 Satterthwaite
+FAMOUS+8 Brams
+FAMOUS+7 Fishburn
+FAMOUS+6 Sen
+FAMOUS+6 Moulin
+FAMOUS+6 Myerson
+FAMOUS+6 Shapley
+FAMOUS+5 Condorcet
+FAMOUS+5 von Neumann
+FAMOUS+5 Morgenstern
+FAMOUS+5 Harsanyi
+FAMOUS+5 Selten
+FAMOUS+4 Dummett
+FAMOUS+4 Young
+FAMOUS+4 Tideman
+
+# Domain-specific modifiers and role nouns
+NOUN+12 electorate
+NOUN+12 constituency
+NOUN+12 policymaker
+NOUN+10 agenda-setter
+NOUN+10 party
+NOUN+10 nomination
+
+# Examples and applied contexts (to bias topical outputs toward applied work)
+NOUN+12 multiwinner elections
+NOUN+12 committee selection
+NOUN+12 participatory budgeting
+NOUN+10 shortlist selection
+NOUN+10 crowd-sourcing
+
+# Lower-weight, but plausible filler vocabulary useful for varied outputs
+NOUN+8 dataset
+NOUN+8 benchmark
+NOUN+8 case study
+NOUN+8 methodology
+NOUN+8 limitation
+NOUN+8 future work
+NOUN+6 conclusion
+
+# Notes:
+# - This overlay expands coverage across axiomatic, computational, and empirical aspects
+#   of approval voting and related social choice fields.
+# - We weight multiwinner / committee-related terms to support outputs about
+#   proportional approval and committee selection.
+# - Keep formatting consistent with other Mathgen topic overlays: tokens and +weights.

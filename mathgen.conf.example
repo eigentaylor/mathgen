@@ -1,0 +1,15 @@
+{
+    "authors": [
+        "J. Doe",
+        "A. Smith"
+    ],
+    "topics": [
+        "topology"
+    ],
+    "product": "article",
+    "mode": "pdf",
+    "output": "mathgen-paper.pdf",
+    "seed": null,
+    "viewer": "evince",
+    "debug": false
+}

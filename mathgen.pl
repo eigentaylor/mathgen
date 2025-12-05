@@ -23,6 +23,10 @@ use strict;
 use scigen;
 use Getopt::Long;
 use File::Temp qw { tempdir };
+use Cwd;
+use File::Spec;
+use File::Path qw(make_path);
+use File::Copy qw(copy);
 
 my $default_mode = 'view';
 my $default_viewer = 'evince';
@@ -47,6 +51,7 @@ my $output;
 my $product = $default_product;
 my $seed;
 my $debug = 0;
+my @topics;  # Topic(s) to bias the generated content toward
 
 my %options;
 
@@ -54,6 +59,7 @@ my $output_fh;
 
 my $rules = {};
 my $rules_RE = undef;
+my $orig_cwd = Cwd::getcwd();
 
 sub readme_text {
     my ($p, $basename) = @_;
@@ -136,6 +142,11 @@ $0 [options]
     --product=article|book|blurb
                               What to generate (default: $default_product)
     --seed=<seed>             Use <seed> to seed the PRNG
+    --topic=<topic>           Topic to bias content toward (can be specified
+                              multiple times for combined topics)
+                              Available: topology, algebra, analysis,
+                              probability, number_theory, social_choice,
+                              approval_voting
     --debug                   Enable various debugging features
 EOUsage
     exit(1);
@@ -152,6 +163,7 @@ sub parse_options {
 		"output=s" => \$output,
 		"product=s" => \$product,
 		"seed=i" => \$seed,
+		"topic=s@" => \@topics,
 		"debug!" => \$debug)
 	or usage();
     if (!$modes{$mode}) {
@@ -252,6 +264,32 @@ sub add_year_rules {
     $rules->{"SCI_YEAR"} = \@year_rule;
 }
 
+sub add_topic_rules {
+    my ($rules) = @_;
+    
+    foreach my $topic (@topics) {
+        my $topic_file = "${data_dir}/topics/${topic}.in";
+        if (-f $topic_file) {
+            my $topic_fh;
+            open($topic_fh, "<$topic_file")
+                or die("$topic_file: $!");
+            scigen::read_rules($topic_fh, $rules, undef, $debug);
+            close($topic_fh);
+            if ($debug) {
+                print STDERR "Loaded topic: $topic\n";
+            }
+        } else {
+            print STDERR "Warning: Topic file not found: $topic_file\n";
+            print STDERR "Available topics: topology, algebra, analysis, probability, number_theory, social_choice\n";
+        }
+    }
+    
+    # Recompute the regex after adding topic rules
+    if (@topics) {
+        scigen::compute_re($rules, \$rules_RE);
+    }
+}
+
 sub setup_rules {
 
     # Open rule file
@@ -266,6 +304,8 @@ sub setup_rules {
     
     scigen::read_rules ($rule_fh, $rules, \$rules_RE, $debug);
 
+    # Load topic-specific rules if any topics were specified
+    add_topic_rules($rules);
 }
 
     
@@ -359,6 +399,24 @@ sub do_output {
     ($product eq 'book') and makeindex($basename);
     pdflatex($basename);
     pdflatex($basename);
+
+    # Copy final PDF to repository outputs directory with a unique name
+    eval {
+        my $dest_root = $orig_cwd || '.';
+        my $out_dir = File::Spec->catdir($dest_root, 'outputs');
+        if (!-d $out_dir) {
+            make_path($out_dir);
+        }
+        my $timestamp = time();
+        my $unique_name = sprintf("%s-%d-%d.pdf", $basename, $timestamp, $$);
+        my $src_pdf = File::Spec->catfile($dir, "$basename.pdf");
+        my $dest_pdf = File::Spec->catfile($out_dir, $unique_name);
+        # If the source file exists, copy it. Otherwise skip quietly.
+        if (-f "$basename.pdf") {
+            copy("$basename.pdf", $dest_pdf) or warn "Failed to copy PDF to $dest_pdf: $!";
+            print STDERR "Copied PDF to $dest_pdf\n";
+        }
+    };
 
     # only used in some modes, but simpler to do it unconditionally
     dump_to_file(readme_text($product, $basename), 'README');

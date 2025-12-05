@@ -1,0 +1,97 @@
+# Topology topic overlay for Mathgen
+# This file adds weighted rules to bias content toward topology
+# Use +N suffix to make terms N times more likely
+
+# Area nouns - heavily weight topology-related areas
+AREANOUN+20 topology
+AREANOUN+10 algebraic topology
+AREANOUN+10 differential topology
+AREANOUN+8 point-set topology
+AREANOUN+8 geometric topology
+AREANOUN+5 homotopy theory
+AREANOUN+5 homology theory
+AREANOUN+5 cohomology theory
+AREANOUN+3 knot theory
+AREANOUN+3 manifold theory
+
+# Area adjectives - weight topological modifiers
+AREAADJ+15 topological
+AREAADJ+8 homotopy
+AREAADJ+8 homological
+AREAADJ+5 cohomological
+AREAADJ+5 differential
+AREAADJ+3 geometric
+
+# Mathematical objects - topology-specific nouns
+NOUN+15 manifold
+NOUNS+15 manifolds
+NOUN+12 space
+NOUNS+12 spaces
+NOUN+10 fiber bundle
+NOUNS+10 fiber bundles
+NOUN+10 covering
+NOUNS+10 coverings
+NOUN+8 homeomorphism
+NOUNS+8 homeomorphisms
+NOUN+8 homotopy
+NOUNS+8 homotopies
+NOUN+6 CW complex
+NOUNS+6 CW complexes
+NOUN+6 fundamental group
+NOUNS+6 fundamental groups
+NOUN+5 simplex
+NOUNS+5 simplices
+NOUN+5 chain complex
+NOUNS+5 chain complexes
+NOUN+5 boundary
+NOUNS+5 boundaries
+NOUN+4 loop
+NOUNS+4 loops
+NOUN+4 path
+NOUNS+4 paths
+NOUN+4 open set
+NOUNS+4 open sets
+NOUN+3 neighborhood
+NOUNS+3 neighborhoods
+NOUN+3 torus
+NOUNS+3 tori
+NOUN+3 sphere
+NOUNS+3 spheres
+NOUN+3 Klein bottle
+NOUNS+3 Klein bottles
+NOUN+3 surface
+NOUNS+3 surfaces
+
+# Properties and adjectives - topological properties
+ADJECTIVE+15 compact
+ADJECTIVE+15 connected
+ADJECTIVE+12 continuous
+ADJECTIVE+10 Hausdorff
+ADJECTIVE+10 open
+ADJECTIVE+10 closed
+ADJECTIVE+8 simply connected
+ADJECTIVE+8 path-connected
+ADJECTIVE+8 locally compact
+ADJECTIVE+6 contractible
+ADJECTIVE+6 orientable
+ADJECTIVE+6 separable
+ADJECTIVE+5 metrizable
+ADJECTIVE+5 paracompact
+ADJECTIVE+5 homotopy equivalent
+ADJECTIVE+4 locally connected
+ADJECTIVE+4 arcwise connected
+ADJECTIVE+3 normal
+ADJECTIVE+3 regular
+ADJECTIVE+3 second countable
+
+# Famous topologists
+FAMOUS+5 Poincar\'e
+FAMOUS+4 Brouwer
+FAMOUS+4 Hausdorff
+FAMOUS+3 Betti
+FAMOUS+3 Hurewicz
+FAMOUS+3 Lefschetz
+FAMOUS+3 Milnor
+FAMOUS+2 Thurston
+FAMOUS+2 Smale
+FAMOUS+2 Perelman
