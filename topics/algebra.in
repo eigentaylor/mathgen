@@ -2,6 +2,21 @@
 # This file adds weighted rules to bias content toward algebra
 # Use +N suffix to make terms N times more likely
 
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+40 algebraic structures
+TITLE_TERM+35 group theory
+TITLE_TERM+32 Galois theory
+TITLE_TERM+28 ring theory
+TITLE_TERM+25 field theory
+TITLE_TERM+22 homomorphisms
+TITLE_TERM+20 modules
+TITLE_TERM+18 algebraic groups
+TITLE_TERM+16 commutative algebra
+TITLE_TERM+14 representations
+TITLE_TERM+12 ideals
+TITLE_TERM+10 abelian groups
+TITLE_TERM+8 Noetherian rings
+
 # Area nouns - heavily weight algebra-related areas
 AREANOUN+20 algebra
 AREANOUN+15 group theory

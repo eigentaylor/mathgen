@@ -2,6 +2,20 @@
 # This file adds weighted rules to bias content toward probability theory
 # Use +N suffix to make terms N times more likely
 
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+40 stochastic processes
+TITLE_TERM+35 probability theory
+TITLE_TERM+30 random variables
+TITLE_TERM+28 martingale theory
+TITLE_TERM+25 Markov chains
+TITLE_TERM+22 Brownian motion
+TITLE_TERM+20 stochastic calculus
+TITLE_TERM+18 ergodic theory
+TITLE_TERM+16 limit theorems
+TITLE_TERM+14 probabilistic methods
+TITLE_TERM+12 random processes
+TITLE_TERM+10 statistical independence
+
 # Area nouns - heavily weight probability-related areas
 AREANOUN+20 probability
 AREANOUN+15 stochastic analysis

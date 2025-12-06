@@ -130,6 +130,10 @@ Interactive mode (guided setup):
 
 $ ./mathgen-runner.pl --interactive
 
+or
+
+perl -I. .\mathgen-runner.pl --interactive
+
 Using a configuration file:
 
 $ ./mathgen-runner.pl --config=mathgen.conf

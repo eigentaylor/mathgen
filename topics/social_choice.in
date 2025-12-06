@@ -3,6 +3,20 @@
 # voting theory, and mechanism design
 # Use +N suffix to make terms N times more likely
 
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+40 social choice theory
+TITLE_TERM+35 voting systems
+TITLE_TERM+30 preference aggregation
+TITLE_TERM+28 mechanism design
+TITLE_TERM+25 strategic voting
+TITLE_TERM+22 Arrow's theorem
+TITLE_TERM+20 social welfare
+TITLE_TERM+18 electoral systems
+TITLE_TERM+16 collective choice
+TITLE_TERM+14 Condorcet methods
+TITLE_TERM+12 axiomatic analysis
+TITLE_TERM+10 voting paradoxes
+
 # Area nouns - heavily weight social choice-related areas
 AREANOUN+20 social choice theory
 AREANOUN+15 voting theory

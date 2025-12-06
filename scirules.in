@@ -1210,6 +1210,26 @@ ATITLE PROPNOUN methods in AREA
 ATITLE on CONCEPT
 ATITLE CONCEPT
 
+# Article titles with topic-specific terms (heavily weighted when topics are loaded)
+ATITLE+15 TITLE_TERM and CONCEPT
+ATITLE+15 on TITLE_TERM in AREA
+ATITLE+14 TITLE_TERM and OBJECTS
+ATITLE+14 PROPNOUN for TITLE_TERM
+ATITLE+13 TITLE_TERM: a survey
+ATITLE+13 on the theory of TITLE_TERM
+ATITLE+12 TITLE_TERM and the METANOUN of OBJECTS
+ATITLE+12 PROPERTY aspects of TITLE_TERM
+ATITLE+11 TITLE_TERM in AREA
+ATITLE+11 applications of TITLE_TERM to AREA
+ATITLE+10 TITLE_TERM: PROPNOUN and CONCEPT
+ATITLE+10 TITLE_TERM over OBJECTS
+ATITLE+9 on PROPERTY TITLE_TERM
+ATITLE+9 TITLE_TERM and PROPNOUN in AREA
+ATITLE+8 the METANOUN of TITLE_TERM
+ATITLE+8 TITLE_TERM with applications to AREA
+ATITLE+7 PROPNOUN methods for TITLE_TERM
+ATITLE+7 TITLE_TERM: theory and applications
+
 # Book titles
 BTITLE+5 AREA
 BTITLE introduction to AREA
@@ -1218,6 +1238,22 @@ BTITLE a first course in AREA
 BTITLE+3: AREA: theory and applications
 BTITLE a beginner's guide to AREA
 BTITLE AREA with applications to AREA
+
+# Book titles with topic-specific terms (heavily weighted when topics are loaded)
+BTITLE+20 TITLE_TERM
+BTITLE+18 introduction to TITLE_TERM
+BTITLE+16 TITLE_TERM: theory and applications
+BTITLE+15 a course in TITLE_TERM
+BTITLE+14 TITLE_TERM and AREA
+BTITLE+13 the theory of TITLE_TERM
+BTITLE+12 topics in TITLE_TERM
+BTITLE+11 TITLE_TERM in modern mathematics
+BTITLE+10 TITLE_TERM with applications to AREA
+BTITLE+10 advanced TITLE_TERM
+BTITLE+9 a first course in TITLE_TERM
+BTITLE+9 TITLE_TERM: an introduction
+BTITLE+8 TITLE_TERM and PROPNOUN
+BTITLE+8 TITLE_TERM in AREA
 
 JNAME Journal
 JNAME Bulletin

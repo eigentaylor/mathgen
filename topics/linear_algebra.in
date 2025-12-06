@@ -1,0 +1,528 @@
+# Linear Algebra topic overlay for Mathgen
+# This file biases content toward linear algebra, matrix theory,
+# vector spaces, operators, and computational linear algebra.
+# Use +N suffix to make terms N times more likely.
+
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+45 linear algebra
+TITLE_TERM+40 matrix theory
+TITLE_TERM+35 eigenvalues
+TITLE_TERM+30 spectral theory
+TITLE_TERM+28 vector spaces
+TITLE_TERM+25 orthogonal matrices
+TITLE_TERM+22 linear operators
+TITLE_TERM+20 singular values
+TITLE_TERM+18 Hermitian matrices
+TITLE_TERM+16 determinants
+TITLE_TERM+14 projections
+TITLE_TERM+12 subspaces
+TITLE_TERM+10 matrix decompositions
+
+# Area nouns - heavily weight linear algebra and related areas
+AREANOUN+30 linear algebra
+AREANOUN+25 matrix theory
+AREANOUN+22 spectral theory
+AREANOUN+20 operator theory
+AREANOUN+18 functional analysis
+AREANOUN+16 numerical linear algebra
+AREANOUN+14 multilinear algebra
+AREANOUN+14 tensor analysis
+AREANOUN+12 computational linear algebra
+AREANOUN+10 representation theory
+AREANOUN+10 matrix analysis
+AREANOUN+8 perturbation theory
+AREANOUN+8 applied linear algebra
+AREANOUN+6 random matrix theory
+AREANOUN+6 matrix calculus
+AREANOUN+5 geometric linear algebra
+
+# Area adjectives - weight relevant modifiers
+AREAADJ+25 linear
+AREAADJ+20 spectral
+AREAADJ+18 orthogonal
+AREAADJ+16 unitary
+AREAADJ+15 symmetric
+AREAADJ+14 Hermitian
+AREAADJ+12 skew-symmetric
+AREAADJ+12 positive-definite
+AREAADJ+10 diagonalizable
+AREAADJ+10 finite-dimensional
+AREAADJ+9 infinite-dimensional
+AREAADJ+8 self-adjoint
+AREAADJ+8 normal
+AREAADJ+6 nilpotent
+AREAADJ+6 idempotent
+
+# Core mathematical objects - vector spaces and subspaces
+NOUN+28 vector space
+NOUNS+28 vector spaces
+NOUN+26 subspace
+NOUNS+26 subspaces
+NOUN+24 vector
+NOUNS+24 vectors
+NOUN+22 basis
+NOUNS+22 bases
+NOUN+20 dimension
+NOUNS+20 dimensions
+NOUN+18 orthonormal basis
+NOUNS+18 orthonormal bases
+NOUN+16 dual space
+NOUNS+16 dual spaces
+NOUN+16 quotient space
+NOUNS+16 quotient spaces
+NOUN+14 direct sum
+NOUNS+14 direct sums
+NOUN+14 tensor product
+NOUNS+14 tensor products
+NOUN+12 linear combination
+NOUNS+12 linear combinations
+NOUN+12 span
+NOUNS+12 spans
+NOUN+10 affine subspace
+NOUNS+10 affine subspaces
+NOUN+10 linear hull
+NOUNS+10 linear hulls
+NOUN+8 convex hull
+NOUNS+8 convex hulls
+NOUN+8 Hamel basis
+NOUNS+8 Hamel bases
+
+# Matrices - core matrix types and structures
+NOUN+30 matrix
+NOUNS+30 matrices
+NOUN+26 square matrix
+NOUNS+26 square matrices
+NOUN+24 diagonal matrix
+NOUNS+24 diagonal matrices
+NOUN+22 identity matrix
+NOUNS+22 identity matrices
+NOUN+20 symmetric matrix
+NOUNS+20 symmetric matrices
+NOUN+20 invertible matrix
+NOUNS+20 invertible matrices
+NOUN+18 orthogonal matrix
+NOUNS+18 orthogonal matrices
+NOUN+18 unitary matrix
+NOUNS+18 unitary matrices
+NOUN+16 Hermitian matrix
+NOUNS+16 Hermitian matrices
+NOUN+16 positive-definite matrix
+NOUNS+16 positive-definite matrices
+NOUN+16 triangular matrix
+NOUNS+16 triangular matrices
+NOUN+14 upper triangular matrix
+NOUNS+14 upper triangular matrices
+NOUN+14 lower triangular matrix
+NOUNS+14 lower triangular matrices
+NOUN+14 skew-symmetric matrix
+NOUNS+14 skew-symmetric matrices
+NOUN+12 normal matrix
+NOUNS+12 normal matrices
+NOUN+12 projection matrix
+NOUNS+12 projection matrices
+NOUN+12 permutation matrix
+NOUNS+12 permutation matrices
+NOUN+10 sparse matrix
+NOUNS+10 sparse matrices
+NOUN+10 banded matrix
+NOUNS+10 banded matrices
+NOUN+10 Toeplitz matrix
+NOUNS+10 Toeplitz matrices
+NOUN+10 circulant matrix
+NOUNS+10 circulant matrices
+NOUN+10 Hankel matrix
+NOUNS+10 Hankel matrices
+NOUN+9 tridiagonal matrix
+NOUNS+9 tridiagonal matrices
+NOUN+9 block matrix
+NOUNS+9 block matrices
+NOUN+8 companion matrix
+NOUNS+8 companion matrices
+NOUN+8 Vandermonde matrix
+NOUNS+8 Vandermonde matrices
+NOUN+8 Hessenberg matrix
+NOUNS+8 Hessenberg matrices
+NOUN+8 Cauchy matrix
+NOUNS+8 Cauchy matrices
+NOUN+6 stochastic matrix
+NOUNS+6 stochastic matrices
+NOUN+6 doubly stochastic matrix
+NOUNS+6 doubly stochastic matrices
+
+# Linear operators and transformations
+NOUN+28 linear operator
+NOUNS+28 linear operators
+NOUN+26 linear transformation
+NOUNS+26 linear transformations
+NOUN+24 linear map
+NOUNS+24 linear maps
+NOUN+22 eigenvalue
+NOUNS+22 eigenvalues
+NOUN+22 eigenvector
+NOUNS+22 eigenvectors
+NOUN+20 eigenspace
+NOUNS+20 eigenspaces
+NOUN+18 projection
+NOUNS+18 projections
+NOUN+18 orthogonal projection
+NOUNS+18 orthogonal projections
+NOUN+16 isometry
+NOUNS+16 isometries
+NOUN+16 rotation
+NOUNS+16 rotations
+NOUN+16 reflection
+NOUNS+16 reflections
+NOUN+14 endomorphism
+NOUNS+14 endomorphisms
+NOUN+14 automorphism
+NOUNS+14 automorphisms
+NOUN+12 isomorphism
+NOUNS+12 isomorphisms
+NOUN+12 kernel
+NOUNS+12 kernels
+NOUN+12 image
+NOUNS+12 images
+NOUN+12 range
+NOUNS+12 ranges
+NOUN+10 null space
+NOUNS+10 null spaces
+NOUN+10 column space
+NOUNS+10 column spaces
+NOUN+10 row space
+NOUNS+10 row spaces
+NOUN+10 rank
+NOUNS+10 ranks
+NOUN+10 nullity
+NOUNS+10 nullities
+NOUN+8 trace
+NOUNS+8 traces
+NOUN+8 adjoint
+NOUNS+8 adjoints
+
+# Matrix decompositions and factorizations
+NOUN+24 singular value decomposition
+NOUN+24 SVD
+NOUN+22 eigendecomposition
+NOUN+22 spectral decomposition
+NOUN+20 LU decomposition
+NOUN+20 LU factorization
+NOUN+18 QR decomposition
+NOUN+18 QR factorization
+NOUN+16 Cholesky decomposition
+NOUN+16 Cholesky factorization
+NOUN+14 Schur decomposition
+NOUN+14 Jordan normal form
+NOUN+14 Jordan canonical form
+NOUN+12 polar decomposition
+NOUN+12 diagonalization
+NOUN+10 block diagonalization
+NOUN+10 Householder transformation
+NOUN+10 Givens rotation
+NOUN+8 Hessenberg decomposition
+NOUN+8 triangularization
+
+# Determinants and related concepts
+NOUN+20 determinant
+NOUNS+20 determinants
+NOUN+16 minor
+NOUNS+16 minors
+NOUN+14 cofactor
+NOUNS+14 cofactors
+NOUN+12 permanent
+NOUNS+12 permanents
+NOUN+10 adjugate matrix
+NOUNS+10 adjugate matrices
+NOUN+8 Laplace expansion
+NOUN+8 Cramer's rule
+
+# Norms, inner products, and distances
+NOUN+22 norm
+NOUNS+22 norms
+NOUN+22 inner product
+NOUNS+22 inner products
+NOUN+20 dot product
+NOUNS+20 dot products
+NOUN+18 matrix norm
+NOUNS+18 matrix norms
+NOUN+16 Frobenius norm
+NOUN+16 operator norm
+NOUN+14 spectral norm
+NOUN+14 Euclidean norm
+NOUN+12 p-norm
+NOUNS+12 p-norms
+NOUN+12 induced norm
+NOUNS+12 induced norms
+NOUN+10 metric
+NOUNS+10 metrics
+NOUN+10 distance
+NOUNS+10 distances
+NOUN+10 orthogonality
+NOUN+8 orthonormality
+NOUN+8 Gram matrix
+NOUNS+8 Gram matrices
+
+# Properties and adjectives - matrix and operator properties
+ADJECTIVE+28 linear
+ADJECTIVE+24 orthogonal
+ADJECTIVE+22 symmetric
+ADJECTIVE+20 diagonal
+ADJECTIVE+20 invertible
+ADJECTIVE+18 unitary
+ADJECTIVE+18 diagonalizable
+ADJECTIVE+16 Hermitian
+ADJECTIVE+16 positive-definite
+ADJECTIVE+16 non-singular
+ADJECTIVE+14 singular
+ADJECTIVE+14 triangular
+ADJECTIVE+14 normal
+ADJECTIVE+12 skew-symmetric
+ADJECTIVE+12 self-adjoint
+ADJECTIVE+12 positive-semidefinite
+ADJECTIVE+10 nilpotent
+ADJECTIVE+10 idempotent
+ADJECTIVE+10 tridiagonal
+ADJECTIVE+10 banded
+ADJECTIVE+8 sparse
+ADJECTIVE+8 dense
+ADJECTIVE+8 full-rank
+ADJECTIVE+8 rank-deficient
+ADJECTIVE+6 orthonormal
+ADJECTIVE+6 bounded
+ADJECTIVE+6 unbounded
+ADJECTIVE+6 compact
+ADJECTIVE+6 defective
+
+# Systems of linear equations
+NOUN+20 linear system
+NOUNS+20 linear systems
+NOUN+18 system of linear equations
+NOUNS+18 systems of linear equations
+NOUN+16 homogeneous system
+NOUNS+16 homogeneous systems
+NOUN+14 overdetermined system
+NOUNS+14 overdetermined systems
+NOUN+14 underdetermined system
+NOUNS+14 underdetermined systems
+NOUN+12 consistent system
+NOUNS+12 consistent systems
+NOUN+12 inconsistent system
+NOUNS+12 inconsistent systems
+NOUN+10 least squares
+NOUN+10 least squares solution
+NOUNS+10 least squares solutions
+NOUN+8 Gaussian elimination
+NOUN+8 row reduction
+NOUN+8 back substitution
+
+# Eigenvalue problems and spectral theory
+NOUN+24 characteristic polynomial
+NOUNS+24 characteristic polynomials
+NOUN+22 characteristic equation
+NOUNS+22 characteristic equations
+NOUN+20 spectrum
+NOUNS+20 spectra
+NOUN+18 spectral radius
+NOUN+16 algebraic multiplicity
+NOUNS+16 algebraic multiplicities
+NOUN+16 geometric multiplicity
+NOUNS+16 geometric multiplicities
+NOUN+14 generalized eigenvector
+NOUNS+14 generalized eigenvectors
+NOUN+12 spectral theorem
+NOUN+10 Gershgorin circle theorem
+NOUN+10 Rayleigh quotient
+NOUN+10 power iteration
+NOUN+8 inverse iteration
+NOUN+8 QR algorithm
+NOUN+8 Lanczos algorithm
+NOUN+6 Arnoldi iteration
+
+# Computational and numerical methods
+NOUN+18 iterative method
+NOUNS+18 iterative methods
+NOUN+16 direct method
+NOUNS+16 direct methods
+NOUN+14 convergence
+NOUN+14 stability
+NOUN+12 condition number
+NOUNS+12 condition numbers
+NOUN+12 numerical stability
+NOUN+10 round-off error
+NOUNS+10 round-off errors
+NOUN+10 floating-point arithmetic
+NOUN+10 machine precision
+NOUN+8 backward stability
+NOUN+8 forward stability
+NOUN+8 preconditioning
+NOUN+8 preconditioner
+NOUNS+8 preconditioners
+
+# Specialized topics and applications
+NOUN+16 quadratic form
+NOUNS+16 quadratic forms
+NOUN+14 bilinear form
+NOUNS+14 bilinear forms
+NOUN+14 sesquilinear form
+NOUNS+14 sesquilinear forms
+NOUN+12 change of basis
+NOUN+12 similarity transformation
+NOUNS+12 similarity transformations
+NOUN+12 congruence transformation
+NOUNS+12 congruence transformations
+NOUN+10 Kronecker product
+NOUNS+10 Kronecker products
+NOUN+10 Hadamard product
+NOUNS+10 Hadamard products
+NOUN+10 outer product
+NOUNS+10 outer products
+NOUN+10 Schur complement
+NOUNS+10 Schur complements
+NOUN+8 matrix exponential
+NOUNS+8 matrix exponentials
+NOUN+8 matrix logarithm
+NOUNS+8 matrix logarithms
+NOUN+8 matrix function
+NOUNS+8 matrix functions
+NOUN+8 Sylvester equation
+NOUN+8 Lyapunov equation
+NOUN+6 Riccati equation
+
+# Inequalities and bounds
+NOUN+14 Cauchy-Schwarz inequality
+NOUN+12 triangle inequality
+NOUN+12 Hölder's inequality
+NOUN+10 Minkowski inequality
+NOUN+10 spectral bound
+NOUNS+10 spectral bounds
+NOUN+8 eigenvalue bound
+NOUNS+8 eigenvalue bounds
+NOUN+8 perturbation bound
+NOUNS+8 perturbation bounds
+NOUN+6 Weyl's inequality
+
+# Tensor and multilinear concepts
+NOUN+14 tensor
+NOUNS+14 tensors
+NOUN+12 rank-one tensor
+NOUNS+12 rank-one tensors
+NOUN+10 tensor rank
+NOUN+10 tensor decomposition
+NOUNS+10 tensor decompositions
+NOUN+8 multilinear map
+NOUNS+8 multilinear maps
+NOUN+8 tensor contraction
+NOUNS+8 tensor contractions
+NOUN+6 exterior product
+NOUNS+6 exterior products
+NOUN+6 wedge product
+NOUNS+6 wedge products
+
+# Matrix groups and Lie theory connections
+NOUN+12 general linear group
+NOUN+12 special linear group
+NOUN+10 orthogonal group
+NOUN+10 special orthogonal group
+NOUN+10 unitary group
+NOUN+10 special unitary group
+NOUN+8 symplectic group
+NOUN+6 Lie group
+NOUNS+6 Lie groups
+NOUN+6 Lie algebra
+NOUNS+6 Lie algebras
+
+# Common verbs and actions
+NOUN+12 diagonalize
+NOUN+12 orthogonalize
+NOUN+12 orthonormalize
+NOUN+10 decompose
+NOUN+10 factorize
+NOUN+10 invert
+NOUN+10 transpose
+NOUN+8 solve
+NOUN+8 compute
+NOUN+8 approximate
+NOUN+8 estimate
+
+# Famous mathematicians in linear algebra
+FAMOUS+10 Cayley
+FAMOUS+10 Hamilton
+FAMOUS+9 Sylvester
+FAMOUS+9 Jordan
+FAMOUS+9 Gram
+FAMOUS+9 Schmidt
+FAMOUS+8 Householder
+FAMOUS+8 Givens
+FAMOUS+8 Schur
+FAMOUS+8 Frobenius
+FAMOUS+7 Cholesky
+FAMOUS+7 Hermite
+FAMOUS+7 Laplace
+FAMOUS+7 Cramer
+FAMOUS+6 Vandermonde
+FAMOUS+6 Toeplitz
+FAMOUS+6 Hankel
+FAMOUS+6 Kronecker
+FAMOUS+6 Hadamard
+FAMOUS+6 Weyl
+FAMOUS+5 Rayleigh
+FAMOUS+5 Lanczos
+FAMOUS+5 Arnoldi
+FAMOUS+5 Gershgorin
+FAMOUS+4 Perron
+FAMOUS+4 Frobenius
+
+# Domain-specific modifiers and technical terms
+NOUN+12 coefficient matrix
+NOUNS+12 coefficient matrices
+NOUN+12 augmented matrix
+NOUNS+12 augmented matrices
+NOUN+10 row vector
+NOUNS+10 row vectors
+NOUN+10 column vector
+NOUNS+10 column vectors
+NOUN+10 matrix entry
+NOUNS+10 matrix entries
+NOUN+10 matrix element
+NOUNS+10 matrix elements
+NOUN+8 leading entry
+NOUNS+8 leading entries
+NOUN+8 pivot
+NOUNS+8 pivots
+NOUN+8 echelon form
+NOUN+8 reduced row echelon form
+NOUN+6 RREF
+
+# Common phrases and technical terminology
+NOUN+12 "linearly independent"
+NOUN+12 "linearly dependent"
+NOUN+10 "row equivalent"
+NOUN+10 "column equivalent"
+NOUN+10 "similar matrices"
+NOUN+10 "congruent matrices"
+NOUN+8 "full rank"
+NOUN+8 "deficient rank"
+NOUN+8 "well-conditioned"
+NOUN+8 "ill-conditioned"
+
+# Advanced and specialized topics
+NOUN+10 pseudoinverse
+NOUN+10 Moore-Penrose inverse
+NOUN+8 generalized inverse
+NOUNS+8 generalized inverses
+NOUN+8 oblique projection
+NOUNS+8 oblique projections
+NOUN+6 principal component analysis
+NOUN+6 PCA
+NOUN+6 principal component
+NOUNS+6 principal components
+NOUN+6 canonical correlation
+NOUN+6 singular value
+NOUNS+6 singular values
+
+# Notes:
+# - This overlay provides comprehensive coverage of linear algebra from basic
+#   vector spaces through advanced matrix theory and numerical methods.
+# - Weights are calibrated to emphasize core concepts (matrices, eigenvalues,
+#   vector spaces) while still including specialized and computational topics.
+# - Both classical theory and computational aspects are represented.
+# - Famous mathematicians are included to provide authentic-sounding references.

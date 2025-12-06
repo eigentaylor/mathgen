@@ -2,6 +2,20 @@
 # This file adds weighted rules to bias content toward number theory
 # Use +N suffix to make terms N times more likely
 
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+40 arithmetic geometry
+TITLE_TERM+35 number theory
+TITLE_TERM+30 prime numbers
+TITLE_TERM+28 Diophantine equations
+TITLE_TERM+25 modular forms
+TITLE_TERM+22 elliptic curves
+TITLE_TERM+20 $p$-adic analysis
+TITLE_TERM+18 algebraic integers
+TITLE_TERM+16 analytic number theory
+TITLE_TERM+14 L-functions
+TITLE_TERM+12 arithmetic functions
+TITLE_TERM+10 quadratic forms
+
 # Area nouns - heavily weight number theory-related areas
 AREANOUN+20 number theory
 AREANOUN+15 analytic number theory

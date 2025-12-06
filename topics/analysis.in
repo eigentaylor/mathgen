@@ -2,6 +2,20 @@
 # This file adds weighted rules to bias content toward analysis
 # Use +N suffix to make terms N times more likely
 
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+40 functional analysis
+TITLE_TERM+35 analytic functions
+TITLE_TERM+30 harmonic analysis
+TITLE_TERM+28 operator theory
+TITLE_TERM+25 spectral theory
+TITLE_TERM+22 Banach spaces
+TITLE_TERM+20 Hilbert spaces
+TITLE_TERM+18 measurable functions
+TITLE_TERM+16 real analysis
+TITLE_TERM+14 complex analysis
+TITLE_TERM+12 convergence
+TITLE_TERM+10 continuity
+
 # Area nouns - heavily weight analysis-related areas
 AREANOUN+20 analysis
 AREANOUN+12 functional analysis

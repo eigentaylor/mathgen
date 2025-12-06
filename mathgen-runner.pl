@@ -14,39 +14,14 @@ use strict;
 use Getopt::Long;
 use JSON;
 use IO::Handle;
-use IPC::Open3;
-use Symbol qw(gensym);
-use IO::Select;
 use File::Basename;
-
-# Simple tee package to duplicate prints to original handle and a log handle.
-package Tee;
-sub TIEHANDLE {
-    my ($class, $fh_orig, $fh_log) = @_;
-    return bless { orig => $fh_orig, log => $fh_log }, $class;
-}
-sub PRINT {
-    my $self = shift;
-    print {$self->{orig}} @_;
-    print {$self->{log}} @_;
-}
-sub PRINTF {
-    my $self = shift;
-    my $fmt = shift;
-    my $s = sprintf($fmt, @_);
-    print {$self->{orig}} $s;
-    print {$self->{log}} $s;
-}
-sub CLOSE {
-    # no-op
-}
-package main;
 
 my $script_dir = dirname($0);
 
 # Default configuration
 my %config = (
     authors  => [],
+    title    => undef,
     topics   => [],
     product  => 'article',
     mode     => 'pdf',
@@ -54,6 +29,9 @@ my %config = (
     seed     => undef,
     viewer   => 'evince',
     debug    => 0,
+    # Bibliography options (match mathgen.pl defaults)
+    bib_include_author => 1,
+    bib_famous => 'all',
 );
 
 my $config_file;
@@ -77,6 +55,7 @@ Options:
     
     Direct options (override config file):
     --author=<name>     Author name (can repeat)
+    --title=<title>     Custom title (optional)
     --topic=<topic>     Topic to bias toward (can repeat)
                         Available: topology, algebra, analysis,
                         probability, number_theory, social_choice,
@@ -87,6 +66,13 @@ Options:
     --seed=<int>        Random seed for reproducibility
     --viewer=<prog>     PDF viewer for --mode=view
     --debug             Enable debugging
+    --bib-include-author Include paper's author in references (default: true)
+    --no-bib-include-author Exclude paper's author from references
+    --bib-famous=all|topic|none
+                        How to include famous mathematicians in references
+                        all: Use all famous mathematicians (default)
+                        topic: Only use topic-specific famous names
+                        none: Don't use famous mathematicians
 
 Examples:
     # Use a config file
@@ -199,6 +185,12 @@ sub interactive_config {
     
     print "\n";
     
+    # Custom title (optional)
+    my $title_input = prompt("Custom title (optional, leave blank for random)", $config{title} // '');
+    $config{title} = $title_input ne '' ? $title_input : undef;
+    
+    print "\n";
+    
     # Topics
     my @available_topics = qw(topology algebra analysis probability number_theory social_choice approval_voting);
     print "Available topics: " . join(", ", @available_topics) . "\n";
@@ -253,15 +245,33 @@ sub interactive_config {
     my $debug_input = prompt("Enable debug mode? (y/n)", $config{debug} ? 'y' : 'n');
     $config{debug} = ($debug_input =~ /^y/i) ? 1 : 0;
     
+    # Bibliography: include paper author in references
+    my $bib_author_default = $config{bib_include_author} ? 'y' : 'n';
+    my $bib_author_input = prompt("Include paper's author in references? (y/n)", $bib_author_default);
+    $config{bib_include_author} = ($bib_author_input =~ /^y/i) ? 1 : 0;
+
+    # Bibliography: famous authors handling
+    print "\n";
+    $config{bib_famous} = prompt_choice(
+        "How to include famous mathematicians in references:",
+        ['all', 'topic', 'none'],
+        $config{bib_famous}
+    );
+
     print "\n";
 }
 
 sub build_command {
     my @cmd = ('perl', '-I.', "$script_dir/mathgen.pl");
     
-    # Add authors
+    # Add authors with quotes
     foreach my $author (@{$config{authors}}) {
-        push @cmd, "--author=$author";
+        push @cmd, "--author=\"$author\"";
+    }
+    
+    # Add custom title with quotes if specified
+    if (defined $config{title} && $config{title} ne '') {
+        push @cmd, "--title=\"$config{title}\"";
     }
     
     # Add topics
@@ -276,6 +286,13 @@ sub build_command {
     push @cmd, "--seed=$config{seed}" if defined $config{seed};
     push @cmd, "--viewer=$config{viewer}" if $config{mode} eq 'view';
     push @cmd, "--debug" if $config{debug};
+    # Bibliography options
+    if ($config{bib_include_author}) {
+        push @cmd, "--bib-include-author";
+    } else {
+        push @cmd, "--no-bib-include-author";
+    }
+    push @cmd, "--bib-famous=$config{bib_famous}" if defined $config{bib_famous};
     
     return @cmd;
 }
@@ -283,12 +300,15 @@ sub build_command {
 sub show_config {
     print "\n=== Configuration Summary ===\n";
     print "Authors: " . (@{$config{authors}} ? join(", ", @{$config{authors}}) : "(random)") . "\n";
+    print "Title: " . ($config{title} // "(random)") . "\n";
     print "Topics: " . (@{$config{topics}} ? join(", ", @{$config{topics}}) : "(none)") . "\n";
     print "Product: $config{product}\n";
     print "Mode: $config{mode}\n";
     print "Output: " . ($config{output} // "(auto)") . "\n";
     print "Seed: " . ($config{seed} // "(random)") . "\n";
     print "Debug: " . ($config{debug} ? "yes" : "no") . "\n";
+    print "Include paper author in references: " . ($config{bib_include_author} ? "yes" : "no") . "\n";
+    print "Famous authors in references: " . ($config{bib_famous} // "(default: all)") . "\n";
     print "\n";
 }
 
@@ -314,6 +334,7 @@ GetOptions(
     "config=s" => \$config_file,
     "interactive" => \$interactive,
     "author=s@" => \@cli_authors,
+    "title=s" => \$config{title},
     "topic=s@" => \@cli_topics,
     "product=s" => \$config{product},
     "mode=s" => \$config{mode},
@@ -321,6 +342,8 @@ GetOptions(
     "seed=i" => \$config{seed},
     "viewer=s" => \$config{viewer},
     "debug!" => \$config{debug},
+    "bib-include-author!" => \$config{bib_include_author},
+    "bib-famous=s" => \$config{bib_famous},
 ) or usage();
 
 usage() if $help;
@@ -344,24 +367,25 @@ if ($interactive) {
         $logfh = $lfh;
         $logfh->autoflush(1);
 
-        # Duplicate all subsequent STDOUT/STDERR to the log as well
-        open my $orig_out, '>&', \\*STDOUT or warn "Could not dup STDOUT: $!\n";
-        open my $orig_err, '>&', \\*STDERR or warn "Could not dup STDERR: $!\n";
-        tie *STDOUT, 'Tee', $orig_out, $logfh;
-        tie *STDERR, 'Tee', $orig_err, $logfh;
-
+        # We'll write interactive output to the log explicitly rather than
+        # tying STDOUT/STDERR (tied handles break IPC::Open3 which needs
+        # real filehandles with a FILENO method).
         print "Interactive log: $log_file\n";
 
-        # Hook warnings and dies to STDERR so they are captured by the tee
+        # Hook warnings and dies to write to both STDERR and the log file
         $SIG{__WARN__} = sub {
             my $msg = shift;
             chomp $msg;
-            warn "[WARN] $msg\n";
+            my $s = "[WARN] $msg\n";
+            print STDERR $s;
+            print $logfh $s if defined $logfh;
         };
         $SIG{__DIE__} = sub {
             my $msg = shift;
             chomp $msg;
-            warn "[DIE] $msg\n";
+            my $s = "[DIE] $msg\n";
+            print STDERR $s;
+            print $logfh $s if defined $logfh;
             # propagate the die after logging
             die $msg;
         };
@@ -409,46 +433,31 @@ if ($config{debug}) {
 
 # Change to script directory for proper module loading
 chdir($script_dir) or die "Cannot change to $script_dir: $!";
-    if (defined $logfh) {
-        print "Running command: " . join(" ", @cmd) . "\n";
 
-        # Run the child process and capture both stdout and stderr so the
-        # log contains everything the child prints. Forward the child's
-        # output to STDOUT (which is tied to also write to the log).
-        my $errfh = gensym;
-        my $pid = open3(undef, my $child_out, $errfh, @cmd);
-
-        my $sel = IO::Select->new();
-        $sel->add($child_out);
-        $sel->add($errfh);
-
-        while (my @ready = $sel->can_read) {
-            foreach my $fh (@ready) {
-                my $line = <$fh>;
-                if (!defined $line) {
-                    $sel->remove($fh);
-                    next;
-                }
-                # Print only to STDOUT; the tie will duplicate to the log
-                print $line;
-            }
-        }
-
-        # Wait for child to exit
-        waitpid($pid, 0);
-        my $result = $?;
-        my $exitcode = $result >> 8;
-        print "Command exited with code: $exitcode (raw: $result)\n";
-        my $ts = scalar localtime();
-        print "=== Interactive run ended: $ts ===\n";
-
-        # Untie and restore original handles
-        untie *STDOUT;
-        untie *STDERR;
-        close $logfh;
-        exit($exitcode);
-    } else {
-        # Non-interactive: fall back to system()
-        my $result = system(@cmd);
-        exit($result >> 8);
-    }
+if (defined $logfh) {
+    # Interactive mode: log the command and run it directly with system()
+    # This allows PDF generation tools (pdflatex, bibtex, etc.) to run
+    # normally without hanging on terminal interactions
+    my $cmd_str = join(" ", @cmd);
+    print "Running command: $cmd_str\n";
+    print $logfh "Running command: $cmd_str\n";
+    
+    my $result = system(@cmd);
+    my $exitcode = $result >> 8;
+    
+    my $exit_msg = "Command exited with code: $exitcode (raw: $result)\n";
+    print $exit_msg;
+    print $logfh $exit_msg;
+    
+    my $ts = scalar localtime();
+    my $end_msg = "=== Interactive run ended: $ts ===\n";
+    print $end_msg;
+    print $logfh $end_msg;
+    
+    close $logfh;
+    exit($exitcode);
+} else {
+    # Non-interactive: run with system()
+    my $result = system(@cmd);
+    exit($result >> 8);
+}

@@ -44,6 +44,7 @@ my $bibname = "scigenbibfile.bib";
 my $data_dir = '.';
 
 my @authors;
+my $custom_title;  # Optional custom title
 my $mode = $default_mode; # pdf, zip, dir, view, raw (undocumented)
 my $viewer = $default_viewer;
 my $dir;
@@ -52,6 +53,10 @@ my $product = $default_product;
 my $seed;
 my $debug = 0;
 my @topics;  # Topic(s) to bias the generated content toward
+
+# Bibliography options
+my $bib_include_author = 1;  # Include paper's author in references
+my $bib_famous = 'all';      # all, topic, or none
 
 my %options;
 
@@ -123,9 +128,11 @@ $0 [options]
   Options:
 
     --help                    Display this help message
-    --author=<quoted_name>    An author of the paper (can be specified 
+    --author=<quoted_name>    An author of the paper (can be specified
                               multiple times)
                               Default: One random author
+    --title=<quoted_title>    Custom title for the paper/book
+                              Default: Randomly generated title
     --mode=pdf|zip|dir|view|raw
                               What to output
     	   		      pdf: Output a PDF file
@@ -147,6 +154,13 @@ $0 [options]
                               Available: topology, algebra, analysis,
                               probability, number_theory, social_choice,
                               approval_voting
+    --bib-include-author      Include paper's author in references (default: true)
+    --no-bib-include-author   Exclude paper's author from references
+    --bib-famous=all|topic|none
+                              How to include famous mathematicians in references
+                              all: Use all famous mathematicians (default)
+                              topic: Only use topic-specific famous names
+                              none: Don't use famous mathematicians
     --debug                   Enable various debugging features
 EOUsage
     exit(1);
@@ -157,6 +171,7 @@ sub parse_options {
     GetOptions( \%options, 
 		"help|?" => \&usage,
 		"author=s@" => \@authors, 
+		"title=s" => \$custom_title,
 		"mode=s" => \$mode,
 		"viewer=s" => \$viewer,
 		"dir=s" => \$dir,
@@ -164,8 +179,16 @@ sub parse_options {
 		"product=s" => \$product,
 		"seed=i" => \$seed,
 		"topic=s@" => \@topics,
+		"bib-include-author!" => \$bib_include_author,
+		"bib-famous=s" => \$bib_famous,
 		"debug!" => \$debug)
 	or usage();
+
+    # Validate bib-famous option
+    if ($bib_famous !~ /^(all|topic|none)$/) {
+	printf STDERR "$0: Unknown bib-famous value '$bib_famous'. Use all, topic, or none.\n";
+	usage();
+    }
     if (!$modes{$mode}) {
 	printf STDERR "$0: Unknown mode $mode\n";
 	usage();
@@ -290,6 +313,61 @@ sub add_topic_rules {
     }
 }
 
+sub add_bibliography_rules {
+    my ($rules) = @_;
+    
+    # Modify AUTHOR rules based on bibliography options
+    # The default AUTHOR rule in scirules.in is:
+    #   AUTHOR+10 FAMOUS_AUTHOR
+    #   AUTHOR+20 GENERIC_AUTHOR
+    #   AUTHOR+4 AUTHOR_NAME
+    
+    my @author_rules = ();
+    
+    # Handle famous authors option
+    if ($bib_famous eq 'none') {
+        # No famous authors at all
+        if ($debug) {
+            print STDERR "Bibliography: excluding all famous authors\n";
+        }
+    } elsif ($bib_famous eq 'topic') {
+        # Only use topic-specific famous authors (if topics are loaded, they
+        # already added their FAMOUS entries; we just don't add FAMOUS_AUTHOR)
+        if (@topics) {
+            # Topics have their own FAMOUS entries; use those via FAMOUS_AUTHOR
+            for (1..10) { push @author_rules, 'FAMOUS_AUTHOR'; }
+            if ($debug) {
+                print STDERR "Bibliography: using topic-specific famous authors only\n";
+            }
+        } else {
+            if ($debug) {
+                print STDERR "Bibliography: no topics specified, excluding famous authors\n";
+            }
+        }
+    } else {
+        # 'all' - use all famous authors (default behavior)
+        for (1..10) { push @author_rules, 'FAMOUS_AUTHOR'; }
+    }
+    
+    # Always include generic authors
+    for (1..20) { push @author_rules, 'GENERIC_AUTHOR'; }
+    
+    # Handle author inclusion in references
+    if ($bib_include_author) {
+        for (1..4) { push @author_rules, 'AUTHOR_NAME'; }
+        if ($debug) {
+            print STDERR "Bibliography: including paper author in references\n";
+        }
+    } else {
+        if ($debug) {
+            print STDERR "Bibliography: excluding paper author from references\n";
+        }
+    }
+    
+    # Override the AUTHOR rule
+    $rules->{"AUTHOR"} = \@author_rules;
+}
+
 sub setup_rules {
 
     # Open rule file
@@ -306,6 +384,35 @@ sub setup_rules {
 
     # Load topic-specific rules if any topics were specified
     add_topic_rules($rules);
+    
+    # Apply bibliography customizations (must be after topics are loaded)
+    add_bibliography_rules($rules);
+    
+    # Override title if custom title was provided (must be after all rules are loaded)
+    # Note: We override SCI_TITLE and BTITLE but NOT ATITLE, because ATITLE is also
+    # used for generating bibliography entries and we don't want all references to
+    # have the same title as the paper.
+    if (defined $custom_title && $custom_title ne '') {
+        # Clean the title: remove any double backslashes that might have been
+        # accidentally included (common when escaping in shells)
+        # Replace \\ with a space or just remove it
+        my $clean_title = $custom_title;
+        $clean_title =~ s/\\\\/ /g;  # Replace \\ with space
+        $clean_title =~ s/\s+/ /g;   # Normalize multiple spaces to single space
+        $clean_title =~ s/^\s+|\s+$//g;  # Trim leading/trailing spaces
+        
+        $rules->{"SCI_TITLE"} = [ $clean_title ];
+        $rules->{"BTITLE"} = [ $clean_title ];
+        if ($debug) {
+            print STDERR "Using custom title: $clean_title\n";
+            if ($custom_title ne $clean_title) {
+                print STDERR "  (cleaned from: $custom_title)\n";
+            }
+        }
+    }
+    
+    # Recompute regex after all rule modifications
+    scigen::compute_re($rules, \$rules_RE);
 }
 
     

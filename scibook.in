@@ -445,6 +445,9 @@ COPYRIGHT {
 
 \vspace{1ex}
 
+\noindent This copy of \texttt{mathgen} has been modified from the original base distribution by subsequent contributors to add a feature to bias the generated content toward specific mathematical topics.
+
+\vspace{1ex}
 
 \noindent This book was generated on \today{} using the seed value SEED.}
 

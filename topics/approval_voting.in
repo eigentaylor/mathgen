@@ -3,6 +3,29 @@
 # social choice, and adjacent computational and statistical topics.
 # Use +N suffix to make terms N times more likely.
 
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+70 approval voting
+TITLE_TERM+35 strategic voting
+TITLE_TERM+30 social choice
+TITLE_TERM+25 voting theory
+TITLE_TERM+22 ranked choice voting
+TITLE_TERM+20 mechanism design
+TITLE_TERM+18 game-theoretic analysis
+TITLE_TERM+16 computational social choice
+TITLE_TERM+15 voting systems
+TITLE_TERM+14 electoral systems
+TITLE_TERM+12 strategic manipulation
+TITLE_TERM+12 monotonicity
+TITLE_TERM+10 proportional representation
+TITLE_TERM+10 Condorcet methods
+TITLE_TERM+8 Nash equilibria
+TITLE_TERM+8 strategyproof mechanisms
+
+TITLE_TERM+12 dichotomous preferences
+TITLE_TERM+10 trichotomous preferences
+TITLE_TERM+10 multi-tiered preferences
+TITLE_TERM+8 graded approval
+
 # Area nouns - heavily weight approval voting and related areas
 AREANOUN+30 approval voting theory
 AREANOUN+25 game theory
@@ -38,28 +61,52 @@ NOUN+30 approval ballot
 NOUNS+30 approval ballots
 NOUN+28 approval score
 NOUNS+28 approval scores
+NOUN+24 preference ranking
+NOUNS+24 preference rankings
+NOUN+24 preference order
+NOUNS+24 preference orders
 NOUN+22 voter
 NOUNS+22 voters
 NOUN+22 candidate
 NOUNS+22 candidates
 NOUN+20 approval set
 NOUNS+20 approval sets
+NOUN+20 ranking
+NOUNS+20 rankings
 NOUN+18 strategy
 NOUNS+18 strategies
 NOUN+18 equilibrium
 NOUNS+18 equilibria
+NOUN+18 vote transfer
+NOUNS+18 vote transfers
 NOUN+16 Nash equilibrium
 NOUNS+16 Nash equilibria
 NOUN+16 preference
 NOUNS+16 preferences
 NOUN+16 utility function
 NOUNS+16 utility functions
+NOUN+16 cardinal utility
+NOUNS+16 cardinal utilities
+NOUN+16 utility scale
+NOUNS+16 utility scales
+NOUN+16 approval intensity
+NOUNS+16 approval intensities
+NOUN+16 elimination order
+NOUNS+16 elimination orders
+NOUN+16 runoff stage
+NOUNS+16 runoff stages
 NOUN+14 coalition
 NOUNS+14 coalitions
 NOUN+14 outcome
 NOUNS+14 outcomes
 NOUN+14 winner
 NOUNS+14 winners
+NOUN+14 majority threshold
+NOUNS+14 majority thresholds
+NOUN+14 first preference
+NOUNS+14 first preferences
+NOUN+14 exhausted ballot
+NOUNS+14 exhausted ballots
 NOUN+12 threshold
 NOUNS+12 thresholds
 NOUN+12 payoff
@@ -70,18 +117,31 @@ NOUN+12 strategic ballot
 NOUNS+12 strategic ballots
 NOUN+12 approval cutoff
 NOUNS+12 approval cutoffs
+NOUN+12 lower preference
+NOUNS+12 lower preferences
+NOUN+12 quota
+NOUNS+12 quotas
 NOUN+10 dominant strategy
 NOUNS+10 dominant strategies
 NOUN+10 best response
 NOUNS+10 best responses
 NOUN+10 tie-breaking rule
 NOUNS+10 tie-breaking rules
+NOUN+10 preference profile
+NOUNS+10 preference profiles
+NOUN+10 ballot exhaustion
+NOUN+10 transfer value
+NOUNS+10 transfer values
 NOUN+8 Condorcet winner
 NOUNS+8 Condorcet winners
 NOUN+8 Pareto optimum
 NOUNS+8 Pareto optima
 NOUN+8 social welfare
 NOUNS+8 social welfare functions
+NOUN+8 Condorcet cycle
+NOUNS+8 Condorcet cycles
+NOUN+8 Condorcet loser
+NOUNS+8 Condorcet losers
 NOUN+6 manipulation
 NOUNS+6 manipulations
 NOUN+6 dictatorship
@@ -90,21 +150,51 @@ NOUNS+6 dictatorships
 # Voting rules, multiwinner methods, and related concepts
 NOUN+22 approval voting
 NOUN+18 score voting
+NOUN+18 ranked choice voting
+NOUN+18 instant runoff voting
 NOUN+16 range voting
+NOUN+16 ranked ballot
+NOUNS+16 ranked ballots
+NOUN+16 runoff election
+NOUNS+16 runoff elections
+NOUN+15 IRV
+NOUN+15 Hare method
+NOUN+15 two-round system
 NOUN+14 plurality voting
 NOUN+14 proportional approval voting
 NOUN+14 sequential PAV
+NOUN+14 exhaustive ballot
+NOUN+14 preferential voting
 NOUN+13 PAV
+NOUN+13 ranked pairs
+NOUN+13 Schulze method
 NOUN+12 Chamberlin--Courant
 NOUN+12 Monroe
 NOUN+12 Single Transferable Vote
+NOUN+12 elimination round
+NOUNS+12 elimination rounds
+NOUN+12 top-two runoff
+NOUN+11 single-seat election
+NOUNS+11 single-seat elections
+NOUN+11 multi-round voting
 NOUN+10 Sainte-Laguë
 NOUN+10 D'Hondt
 NOUN+10 Borda count
+NOUN+10 Coombs method
+NOUN+10 Bucklin voting
+NOUN+10 supplementary vote
 NOUN+9 Condorcet method
+NOUN+9 Copeland's method
+NOUN+9 Kemeny-Young method
 NOUN+8 majority judgment
 NOUN+8 Approval-based Committee Selection
 NOUN+8 Satisfaction Approval Voting
+NOUN+8 contingent vote
+NOUN+8 alternative vote
+NOUN+8 exhaustive runoff
+NOUN+7 Dodgson's method
+NOUN+7 Nanson's method
+NOUN+6 Baldwin's method
 
 # Properties and adjectives - approval voting and social choice properties
 ADJECTIVE+28 approval-based
@@ -112,7 +202,12 @@ ADJECTIVE+22 strategic
 ADJECTIVE+20 sincere
 ADJECTIVE+20 Pareto-optimal
 ADJECTIVE+18 incentive-compatible
-ADJECTIVE+18 strategy-proof
+ADJECTIVE+18 strategyproof
+ADJECTIVE+18 dichotomous
+ADJECTIVE+16 trichotomous
+ADJECTIVE+14 graded
+ADJECTIVE+12 cardinal
+ADJECTIVE+12 multi-tiered
 ADJECTIVE+16 monotonic
 ADJECTIVE+16 anonymous
 ADJECTIVE+16 neutral
@@ -136,18 +231,31 @@ ADJECTIVE+6 complete
 
 # Axioms, criteria, and evaluation metrics
 NOUN+18 participation criterion
+NOUN+18 majority criterion
 NOUN+16 monotonicity criterion
 NOUN+16 reinforcement
 NOUN+16 consistency criterion
+NOUN+16 Condorcet criterion
+NOUN+16 Condorcet-loser criterion
 NOUN+14 committee monotonicity
 NOUN+14 clone independence
 NOUN+14 proportionality guarantee
 NOUN+14 representativeness
+NOUN+14 later-no-harm
+NOUN+14 later-no-help
+NOUN+14 favorite betrayal
 NOUN+12 distortion
 NOUN+12 regret
 NOUN+12 social choice metric
+NOUN+12 monotonicity failure
+NOUN+12 non-monotonicity
+NOUN+12 center squeeze
 NOUN+10 sample complexity
 NOUN+10 robustness
+NOUN+10 independence of irrelevant alternatives
+NOUN+10 IIA
+NOUN+10 reversal symmetry
+NOUN+10 mutual majority criterion
 
 # Computational and statistical concepts
 NOUN+16 NP-hardness
@@ -162,17 +270,35 @@ NOUN+10 maximum-likelihood estimator
 NOUN+10 impartial culture
 NOUN+10 Mallows model
 NOUN+10 empirical distribution
+NOUN+12 utility-maximization
+NOUN+12 utility-based model
+NOUN+10 cardinal-measure
 
 # Strategic behavior, manipulations and equilibrium concepts
 NOUN+18 strategic nomination
+NOUN+18 compromise voting
+NOUN+18 tactical ranking
 NOUN+16 ballot truncation
 NOUN+16 approval inflation
 NOUN+16 bullet voting
+NOUN+16 preference inversion
+NOUN+16 burying strategy
 NOUN+14 manipulation margin
 NOUN+14 equilibrium selection
+NOUN+14 push-over strategy
+NOUN+14 turkey raising
 NOUN+12 dominated strategy
 NOUN+12 iterative elimination
 NOUN+12 trembling-hand
+NOUN+12 vote splitting
+NOUN+12 spoiler effect
+NOUN+12 strategic withdrawal
+NOUN+10 rank reversal
+NOUN+10 teaming strategy
+NOUN+12 dichotomous goal
+NOUNS+12 dichotomous goals
+NOUN+12 graded-approval strategy
+NOUNS+12 graded-approval strategies
 
 # Methods and tools used in research
 NOUN+14 simulation
@@ -183,6 +309,8 @@ NOUN+12 lab experiment
 NOUN+10 regression analysis
 NOUN+10 causal inference
 NOUN+10 synthetic data
+NOUN+10 utility elicitation
+NOUN+10 scoring calibration
 
 # Common verbs/noun-verb pairs used in paper text
 NOUN+10 analyze
@@ -210,18 +338,26 @@ FAMOUS+9 Gibbard
 FAMOUS+8 Satterthwaite
 FAMOUS+8 Brams
 FAMOUS+7 Fishburn
+FAMOUS+7 Tideman
 FAMOUS+6 Sen
 FAMOUS+6 Moulin
 FAMOUS+6 Myerson
 FAMOUS+6 Shapley
+FAMOUS+6 Schulze
 FAMOUS+5 Condorcet
 FAMOUS+5 von Neumann
 FAMOUS+5 Morgenstern
 FAMOUS+5 Harsanyi
 FAMOUS+5 Selten
+FAMOUS+5 Dodgson
+FAMOUS+5 Kemeny
+FAMOUS+5 Nanson
 FAMOUS+4 Dummett
 FAMOUS+4 Young
-FAMOUS+4 Tideman
+FAMOUS+4 Coombs
+FAMOUS+4 Baldwin
+FAMOUS+4 Copeland
+FAMOUS+4 Bucklin
 
 # Domain-specific modifiers and role nouns
 NOUN+12 electorate

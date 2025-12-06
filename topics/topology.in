@@ -2,6 +2,20 @@
 # This file adds weighted rules to bias content toward topology
 # Use +N suffix to make terms N times more likely
 
+# Title terms - key words/phrases to include in titles
+TITLE_TERM+40 topological spaces
+TITLE_TERM+35 algebraic topology
+TITLE_TERM+30 manifolds
+TITLE_TERM+28 homotopy theory
+TITLE_TERM+25 homology
+TITLE_TERM+22 cohomology
+TITLE_TERM+20 fiber bundles
+TITLE_TERM+18 topological manifolds
+TITLE_TERM+16 continuous mappings
+TITLE_TERM+14 compact spaces
+TITLE_TERM+12 differential topology
+TITLE_TERM+10 fundamental groups
+
 # Area nouns - heavily weight topology-related areas
 AREANOUN+20 topology
 AREANOUN+10 algebraic topology
